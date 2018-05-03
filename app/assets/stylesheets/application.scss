@@ -16,4 +16,19 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-//@import "devise";
+
+.navbar-brand {
+  height: 85px;
+  font-size: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.link-item {
+  padding-top: 30px;
+}
+
+.navbar-brand>img {
+  height: 100%;
+  width: auto;
+}

@@ -33,7 +33,7 @@ en:
   hello: "Hello world"
   layouts:
     application:
-      time_table: "Timetable"
+      time_table: "Time Table"
       grades: "Grades"
       events: "Events"
 

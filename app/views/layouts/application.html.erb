@@ -11,27 +11,29 @@
 
 <body>
 <nav class="navbar navbar-light bg-light navbar-inverse">
-  <a class="navbar-brand" href="/">
+  <a class="navbar-brand link-item" href="/">
     Home
   </a>
 
-  <%= link_to (t'.time_tables'), time_tables_path, method: :get, :class => "navbar-brand" %>
+  <%= link_to (t '.time_table'), time_tables_path, method: :get, :class => "navbar-brand link-item" %>
 
-  <%= link_to (t'.grades'), grades_path, method: :get, :class => "navbar-brand" %>
+  <%= link_to (t '.grades'), grades_path, method: :get, :class => "navbar-brand link-item" %>
 
-  <%= link_to (t'.events'), events_path, method: :get, :class => "navbar-brand" %>
+  <%= link_to (t '.events'), events_path, method: :get, :class => "navbar-brand link-item" %>
 
   <% if user_signed_in? %>
-    <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-brand pull-right" %>
-      <a class="navbar-brand pull-right" href="#">
-        <%= image_tag(asset_path('default-avatar.png')) %>
-      </a>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-brand pull-right link-item" %>
+    <a class="navbar-brand pull-right" href=<%= settings_path %>>
+      <%= image_tag(asset_path('default-avatar.png')) %>
+    </a>
   <% end %>
 
   <% if user_signed_in? == false %>
-    <%= link_to 'Login', new_user_session_path, method: :get, :class => "navbar-brand pull-right" %>
+    <%= link_to 'Login', new_user_session_path, method: :get, :class => "navbar-brand pull-right link-item" %>
   <% end %>
 </nav>
+
+
 <div class="container-fluid">
   <div class="row">
     <% if notice.present? %>
