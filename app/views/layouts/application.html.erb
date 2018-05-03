@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>StudiumPlaner</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>StudiumPlaner</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<nav class="navbar navbar-light bg-light navbar-inverse">
+  <a class="navbar-brand" href="/">
+    Home
+  </a>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <%= link_to (t'.time_tables'), time_tables_path, method: :get, :class => "navbar-brand" %>
+
+  <%= link_to (t'.grades'), grades_path, method: :get, :class => "navbar-brand" %>
+
+  <%= link_to (t'.events'), events_path, method: :get, :class => "navbar-brand" %>
+
+  <% if user_signed_in? %>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-brand pull-right" %>
+      <a class="navbar-brand pull-right" href="#">
+        <%= image_tag(asset_path('default-avatar.png')) %>
+      </a>
+  <% end %>
+
+  <% if user_signed_in? == false %>
+    <%= link_to 'Login', new_user_session_path, method: :get, :class => "navbar-brand pull-right" %>
+  <% end %>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <% if notice.present? %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <%= alert %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= yield %>
+</body>
 </html>

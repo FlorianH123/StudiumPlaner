@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  layouts:
+    application:
+      time_table: "Timetable"
+      grades: "Grades"
+      events: "Events"
+
