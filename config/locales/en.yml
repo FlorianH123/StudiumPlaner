@@ -36,4 +36,19 @@ en:
       time_table: "Time Table"
       grades: "Grades"
       events: "Events"
+      english: "English"
+      german: "German"
+
+  grades:
+    show:
+      my_grades: "My Grades"
+      add_new_grade: "Add New Grade"
+      save_grade_button: "Save Grade"
+      grade_text_field: "Grade"
+      lecture_text_field: "Lecture"
+      grade_point_average: "Grade Point Average"
+      thead_grade: "Grade"
+      thead_lecture: "Lecture"
+      grades: "All Grades"
+      remove_grade: "Remove Grade"
 

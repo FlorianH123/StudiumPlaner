@@ -54,5 +54,18 @@
   </div>
 </div>
 <%= yield %>
+
+
+<footer class="footer">
+  <div class="container footer-container">
+    <div class="footer-text footer-text-rigth">
+      <%= link_to t('.english'), locales_path(locale: :en), method: :patch %>
+      /
+      <%= link_to t('.german'), locales_path(locale: :de), method: :patch %>
+    </div>
+  </div>
+</footer>
+
+
 </body>
 </html>

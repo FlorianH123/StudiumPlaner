@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resource 'grades'
   resource 'time_tables'
   resource 'settings'
+  resource 'locales'
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

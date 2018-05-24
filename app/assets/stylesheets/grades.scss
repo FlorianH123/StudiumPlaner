@@ -1,3 +1,20 @@
 // Place all the styles related to the grades controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.gradeTable {
+  font-size: 1.5em;
+}
+
+.gradeTable td {
+  text-align: center;
+}
+
+.gradeTable th {
+  text-align: center;
+}
+
+.new-grade, .average-grade {
+  margin-bottom: 60px;
+}
+

@@ -74,3 +74,6 @@ gem 'jquery-rails'
 # i18n
 gem 'rails-i18n'
 gem 'devise-i18n'
+
+# Form Styling
+gem 'simple_form'

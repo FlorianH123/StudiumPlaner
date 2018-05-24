@@ -32,3 +32,35 @@
   height: 100%;
   width: auto;
 }
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
+}
+
+.footer-container {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.footer-text {
+
+}
+
+.footer-text-rigth {
+  float: right;
+}
+

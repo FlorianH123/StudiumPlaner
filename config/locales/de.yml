@@ -1,0 +1,23 @@
+de:
+  hello: "Hello world"
+
+  layouts:
+    application:
+      time_table: "Vorlesungsplan"
+      grades: "Noten"
+      events: "Termine"
+      english: "Englisch"
+      german: "Deutsch"
+
+  grades:
+    show:
+      my_grades: "Meine Noten"
+      add_new_grade: "Note hinzufügen"
+      save_grade_button: "Note speichern"
+      grade_text_field: "Note"
+      lecture_text_field: "Vorlesung"
+      grade_point_average: "Notenschnitt"
+      thead_grade: "Note"
+      thead_lecture: "Vorlesung"
+      grades: "Alle Noten"
+      remove_grade: "Note löschen"
