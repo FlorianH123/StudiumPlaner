@@ -35,4 +35,14 @@ class GradesController < ApplicationController
   def set_grade
     @grade = Grade.find(params[:id])
   end
+
+  def getAverageGradePoint
+    if current_user.grades.pluck("avg(grade_value)").join(',') != ""
+        return current_user.grades.pluck("avg(grade_value)").join(',')
+
+    else
+        return "No grades entered yet"
+    end
+  end
+  helper_method :getAverageGradePoint
 end

@@ -21,7 +21,7 @@
   <div class="average-grade">
     <h1>
       <%= t('.grade_point_average') %>
-      <%= current_user.grades.pluck("avg(grade_value)") %>
+      <%= getAverageGradePoint %>
     </h1>
   </div>
 
@@ -45,7 +45,7 @@
             <tr>
               <td> <%= item.grade_value %> </td>
               <td> <%= item.lecture %> </td>
-              <td> <%= link_to t('.remove_grade'), grades_path(@grade), method: :delete %> </td>
+              <td> <%= link_to t('.remove_grade'), grades_path(@grade), method: :delete, data: {confirm: t('.remove_grade_confirmation')} %> </td>
             </tr>
           <% end %>
         <% end %>
