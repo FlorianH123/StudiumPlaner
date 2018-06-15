@@ -1,4 +1,10 @@
 de:
+  controllers:
+    grades_controller:
+      grade_saved: "Die Note wurde gespeichert"
+      grade_not_saved: "Die Note konnte nicht gespeichert werden!"
+      grade_not_found: "Es wurde noch keine Note gespeichert!"
+
   hello: "Hello world"
 
   layouts:
@@ -10,13 +16,17 @@ de:
       german: "Deutsch"
 
   grades:
-    show:
+    add_new_grade:
       my_grades: "Meine Noten"
       add_new_grade: "Note hinzufügen"
       save_grade_button: "Note speichern"
       grade_text_field: "Note"
       lecture_text_field: "Vorlesung"
+
+    average_gradepoint:
       grade_point_average: "Notenschnitt:"
+
+    show_all_grades:
       thead_grade: "Note"
       thead_lecture: "Vorlesung"
       grades: "Alle Noten"

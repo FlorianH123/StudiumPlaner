@@ -1,0 +1,20 @@
+<div class="new-grade">
+  <h1>
+    <%= t('.my_grades') %>
+  </h1>
+
+  <div class="container">
+    <div class="col-sm-5">
+      <h2>
+        <%= t('.add_new_grade') %>
+      </h2>
+      <%= simple_form_for @grade do |f| %>
+        <%= f.input :grade_value, as: :string, label: false, input_html: {autocomplete: 'off'},
+                    placeholder: t('.grade_text_field') %>
+        <%= f.input :lecture, label: false, input_html: {autocomplete: 'off'},
+                    placeholder: t('.lecture_text_field') %>
+        <%= f.submit t('.save_grade_button') %>
+      <% end %>
+    </div>
+  </div>
+</div>

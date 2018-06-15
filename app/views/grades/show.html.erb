@@ -1,56 +1,9 @@
 <div class="container-fluid">
-  <div class="new-grade">
-    <h1>
-      <%= t('.my_grades') %>
-    </h1>
 
-    <div class="container">
-      <div class="col-sm-5">
-        <h2>
-          <%= t('.add_new_grade') %>
-        </h2>
-        <%= simple_form_for @grade do |f| %>
-          <%= f.input :grade_value, as: :string, label: false, input_html: { autocomplete: 'off' }, placeholder: t('.grade_text_field') %>
-          <%= f.input :lecture, label: false, input_html: { autocomplete: 'off' }, placeholder: t('.lecture_text_field') %>
-          <%= f.submit t('.save_grade_button') %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+  <%= render 'add_new_grade' %>
 
-  <div class="average-grade">
-    <h1>
-      <%= t('.grade_point_average') %>
-      <%= getAverageGradePoint %>
-    </h1>
-  </div>
+  <%= render 'average_gradepoint' %>
 
-  <div class="all-grades">
-    <h1>
-      <%= t('.grades') %>
-    </h1>
+  <%= render 'show_all_grades' %>
 
-    <div class="container">
-      <table class="table table-hover gradeTable">
-        <thead>
-        <tr>
-          <th> <%= t('.thead_grade') %> </th>
-          <th> <%= t('.thead_lecture') %> </th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <% if !@grades.blank? %>
-          <% for item in @grades %>
-            <tr>
-              <td> <%= item.grade_value %> </td>
-              <td> <%= item.lecture %> </td>
-              <td> <%= link_to t('.remove_grade'), grades_path(@grade), method: :delete, data: {confirm: t('.remove_grade_confirmation')} %> </td>
-            </tr>
-          <% end %>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
 </div>

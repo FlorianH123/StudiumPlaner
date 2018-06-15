@@ -31,6 +31,13 @@
 
 en:
   hello: "Hello world"
+
+  controllers:
+      grades_controller:
+        grade_saved: "Grade saved"
+        grade_not_saved: "There was an error while saving the grade!"
+        grade_not_found: "No grades entered yet!"
+
   layouts:
     application:
       time_table: "Time Table"
@@ -40,13 +47,17 @@ en:
       german: "German"
 
   grades:
-    show:
+    add_new_grade:
       my_grades: "My Grades"
       add_new_grade: "Add New Grade"
       save_grade_button: "Save Grade"
       grade_text_field: "Grade"
       lecture_text_field: "Lecture"
+
+    average_gradepoint:
       grade_point_average: "Grade Point Average:"
+
+    show_all_grades:
       thead_grade: "Grade"
       thead_lecture: "Lecture"
       grades: "All Grades"

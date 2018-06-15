@@ -12,10 +12,10 @@ class GradesController < ApplicationController
     @grade.user = current_user
 
     if @grade.save
-      flash[:notice] = "Hat geklappt"
+      flash[:notice] = t('controllers.grades_controller.grade_not_saved')
 
     else
-      flash[:alert] = "Hat nicht geklappt"
+      flash[:alert] = t('controllers.grades_controller.grade_not_saved')
     end
     redirect_to grades_path
   end
@@ -36,13 +36,15 @@ class GradesController < ApplicationController
     @grade = Grade.find(params[:id])
   end
 
-  def getAverageGradePoint
+  def get_average_grade_point
     if current_user.grades.pluck("avg(grade_value)").join(',') != ""
-        return current_user.grades.pluck("avg(grade_value)").join(',')
+      current_user.grades.pluck("avg(grade_value)").join(',')
 
     else
-        return "No grades entered yet"
+
+      t('controllers.grades_controller.grade_not_found')
     end
   end
-  helper_method :getAverageGradePoint
+
+  helper_method :get_average_grade_point
 end
