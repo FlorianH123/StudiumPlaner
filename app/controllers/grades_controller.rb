@@ -3,8 +3,8 @@ class GradesController < ApplicationController
 
   def show
     @grade = Grade.new
-    @grade.user = current_user
-    @grades = Grade.all
+    @grades = Grade.where('user_id = ?', current_user.id)
+    #TODO wird das gebraucht? @grade.user = current_user
   end
 
   def create
@@ -41,7 +41,6 @@ class GradesController < ApplicationController
       current_user.grades.pluck("avg(grade_value)").join(',')
 
     else
-
       t('controllers.grades_controller.grade_not_found')
     end
   end
