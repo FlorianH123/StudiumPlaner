@@ -32,3 +32,27 @@ de:
       grades: "Alle Noten"
       remove_grade: "Note löschen"
       remove_grade_confirmation: "Sind Sie sicher das Sie diese Note löschen wollen?"
+
+  events:
+    date_from: "Von"
+    date_to: "Bis"
+    place: "Ort"
+    title: "Topic"
+    new_event: "Neuer Termin"
+
+  timetable:
+    add_new_row: "Neue Zeile"
+    remove_last_row: "Entferne letzte Zeile"
+    period: ". Stunde"
+
+  weekday:
+    monday: "Montag"
+    tuesday: "Dienstag"
+    wednesday: "Mittwoch"
+    thursday: "Donnerstag"
+    friday: "Freitag"
+    saturday: "Samstag"
+
+  button_lables:
+    save: "Speichern"
+    cancle: "Abbrechen"

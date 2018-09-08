@@ -11,12 +11,15 @@ class GradesController < ApplicationController
     @grade = Grade.new(grade_params)
     @grade.user = current_user
 
-    if @grade.save
-      flash[:notice] = t('controllers.grades_controller.grade_not_saved')
 
-    else
-      flash[:alert] = t('controllers.grades_controller.grade_not_saved')
-    end
+    @grade.save
+
+    # if @grade.save
+    #   flash[:notice] = t('controllers.grades_controller.grade_not_saved')
+    #
+    # else
+    #   flash[:alert] = t('controllers.grades_controller.grade_not_saved')
+    # end
     redirect_to grades_path
   end
 

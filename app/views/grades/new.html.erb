@@ -13,8 +13,6 @@
                     placeholder: t('.grade_text_field') %>
         <%= f.input :lecture, label: false, input_html: {autocomplete: 'off'},
                     placeholder: t('.lecture_text_field') %>
-        <%= f.error :grade_value %>
-        <%= f.error :lecture %>
         <%= f.submit t('.save_grade_button') %>
       <% end %>
     </div>

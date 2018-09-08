@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="col-sm-5">
+    <%= simple_form_for @event do |f| %>
+      <%= f.input :date_from, as: :datetime, label: t('events.date_from'), input_html: {autocomplete: 'off'} %>
+      <%= f.input :date_to, as: :datetime, label: t('events.date_to'), input_html: {autocomplete: 'off'} %>
+      <%= f.input :place, as: :string, label: false, input_html: {autocomplete: 'off'},
+              placeholder: t('events.place') %>
+      <%= f.input :title, label: false, input_html: {autocomplete: 'off'},
+              placeholder: t('events.title') %>
+      <%= f.submit t('button_lables.save') %>
+    <% end %>
+  </div>
+</div>

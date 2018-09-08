@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resource 'events'
-  resource 'grades'
+  resource :grades
   resource 'time_tables'
   resource 'settings'
   resource 'locales'

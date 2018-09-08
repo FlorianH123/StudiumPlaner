@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_24_083411) do
+ActiveRecord::Schema.define(version: 2018_09_08_192312) do
+
+  create_table "event_participants", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "participant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "date_from"
+    t.datetime "date_to"
+    t.string "place"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
 
   create_table "grades", force: :cascade do |t|
     t.float "grade_value"
