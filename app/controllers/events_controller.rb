@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
   def show
-    @events = Event.new
-    @events = Event.where('user_id = ?', current_user.id)
+    @events = Event.all.where('date_to > ?', DateTime.current)
   end
 
   def new
@@ -10,11 +9,14 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.user = current_user
 
+    if @event.save
+      flash[:notice] = t('events.event_saved')
+    else
+      flash[:alert] = t('events.event_not_saved')
+    end
 
-    @event.save
-
+    EventMailer.notify_event_participants(@event, current_user).deliver
     redirect_to events_path
   end
 
@@ -22,9 +24,5 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:date_from, :date_to, :place, :title)
-  end
-
-  def set_grade
-    @grade = Grade.find(params[:id])
   end
 end

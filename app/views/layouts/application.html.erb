@@ -23,8 +23,8 @@
 
   <% if user_signed_in? %>
     <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-brand pull-right link-item" %>
-    <a class="navbar-brand pull-right" href=<%= settings_path %>>
-      <%= image_tag(asset_path('default-avatar.png')) %>
+    <a class="navbar-brand pull-right" href=<%= edit_user_registration_path %>>
+      <%= image_tag('Bildschirmfoto von »2017-12-04 11-51-16«.png') %>
     </a>
   <% end %>
 

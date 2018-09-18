@@ -18,7 +18,7 @@
             <tr>
               <td> <%= item.grade_value %> </td>
               <td> <%= item.lecture %> </td>
-              <td> <%= link_to t('.remove_grade'), grades_path(@grade), method: :delete,
+              <td> <%= link_to t('.remove_grade'), grades_path(@grade), method: :get,
                                data: {confirm: t('.remove_grade_confirmation')} %> </td>
             </tr>
           <% end %>

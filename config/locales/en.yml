@@ -70,6 +70,10 @@ en:
     place: "Place"
     title: "Topic"
     new_event: "New Event"
+    where: "Where"
+    invitation_text: "You got invited to an appointment from"
+    event_saved: "Appointent created!"
+    event_not_saved: "Appointment could not be created!"
 
   timetable:
     add_new_row: "New row"

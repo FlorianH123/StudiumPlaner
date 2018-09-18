@@ -15,8 +15,8 @@
     <% if !@events.blank? %>
       <% for item in @events %>
         <tr>
-          <td> <%= item.date_from %> </td>
-          <td> <%= item.date_to %> </td>
+          <td> <%= item.date_from.strftime("%F  %T") %> </td>
+          <td> <%= item.date_to.strftime("%F  %T") %> </td>
           <td> <%= item.title %> </td>
           <td> <%= item.place %> </td>
 

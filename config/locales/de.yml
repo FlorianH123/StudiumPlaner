@@ -39,6 +39,10 @@ de:
     place: "Ort"
     title: "Topic"
     new_event: "Neuer Termin"
+    where: "Wo"
+    invitation_text: "Sie wurden zu einem Termin eingeladen von"
+    event_saved: "Termin wurde gespeichert!"
+    event_not_saved: "Termin konnte nicht gespeichert werden!"
 
   timetable:
     add_new_row: "Neue Zeile"

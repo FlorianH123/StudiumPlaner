@@ -10,14 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_08_192312) do
+ActiveRecord::Schema.define(version: 2018_09_13_190003) do
 
-  create_table "event_participants", force: :cascade do |t|
-    t.integer "event_id"
-    t.integer "participant_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
     t.datetime "date_from"
@@ -26,7 +22,6 @@ ActiveRecord::Schema.define(version: 2018_09_08_192312) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
   end
 
   create_table "grades", force: :cascade do |t|
@@ -35,6 +30,13 @@ ActiveRecord::Schema.define(version: 2018_09_08_192312) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+  end
+
+  create_table "participants_events", id: false, force: :cascade do |t|
+    t.bigint "events_id"
+    t.bigint "users_id"
+    t.index ["events_id"], name: "index_participants_events_on_events_id"
+    t.index ["users_id"], name: "index_participants_events_on_users_id"
   end
 
   create_table "time_tables", force: :cascade do |t|
@@ -55,6 +57,10 @@ ActiveRecord::Schema.define(version: 2018_09_08_192312) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

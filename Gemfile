@@ -80,5 +80,10 @@ gem 'simple_form'
 
 gem 'rspec'
 
-gem 'pg', '~> 0.21.0'
-#gem 'aws-sdk-s3'
+gem 'pg'
+gem 'mysql2'
+
+gem 'aws-sdk-s3'
+gem "paperclip", "~> 6.0.0"
+
+gem 'validates_timeliness'
