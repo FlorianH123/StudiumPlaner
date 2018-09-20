@@ -42,9 +42,16 @@ en:
     application:
       time_table: "Time Table"
       grades: "Grades"
-      events: "Events"
+      events: "Appointments"
       english: "English"
       german: "German"
+
+  application_name: "Study Planner"
+
+  features:
+    timetable: "Creating Timetables"
+    grade: "Manage Grades"
+    event: "Arrange Appointments"
 
   grades:
     add_new_grade:

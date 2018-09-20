@@ -13,7 +13,8 @@ class EventsController < ApplicationController
     if @event.save
       flash[:notice] = t('events.event_saved')
     else
-      flash[:alert] = t('events.event_not_saved')
+      flash[:alert] = @event.errors.full_messages.map(&:inspect).join(', ')
+
     end
 
     EventMailer.notify_event_participants(@event, current_user).deliver

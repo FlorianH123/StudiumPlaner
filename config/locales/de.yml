@@ -7,6 +7,13 @@ de:
 
   hello: "Hello world"
 
+  application_name: "Studiumplaner"
+
+  features:
+    timetable: "Studenplan erstellen"
+    grade: "Notenverwalten"
+    event: "Termine anlegen"
+
   layouts:
     application:
       time_table: "Vorlesungsplan"
