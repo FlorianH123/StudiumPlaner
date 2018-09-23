@@ -11,7 +11,7 @@
               placeholder: t('events.place') %>
       <%= f.input :title, label: false, input_html: {autocomplete: 'off'},
               placeholder: t('events.title') %>
-      <%= f.association :participants, label_method: :email %>
+      <%= f.association :users, label_method: :email %>
       <%= f.submit t('button_lables.save') %>
     <% end %>
   </div>

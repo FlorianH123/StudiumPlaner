@@ -13,7 +13,7 @@ class GradesController < ApplicationController
     if @grade.save
       flash[:notice] = t('controllers.grades_controller.grade_not_saved')
     else
-      flash[:alert] = t('controllers.grades_controller.grade_not_saved')
+      flash[:alert] = @grade.errors.full_messages.map(&:inspect).join(',')
     end
 
     redirect_to grades_path

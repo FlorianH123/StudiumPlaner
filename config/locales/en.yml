@@ -54,12 +54,16 @@ en:
     event: "Arrange Appointments"
 
   grades:
+    grade_greater_1: "the best grade is 1.0"
+    grade_less_4: "the worst grade is 4.0"
+
     add_new_grade:
       my_grades: "My Grades"
       add_new_grade: "Add New Grade"
       save_grade_button: "Save Grade"
       grade_text_field: "Grade"
       lecture_text_field: "Lecture"
+
 
     average_gradepoint:
       grade_point_average: "Grade Point Average:"
@@ -76,6 +80,7 @@ en:
     date_to: "To"
     place: "Place"
     title: "Topic"
+    participants: "Participants"
     new_event: "New Event"
     where: "Where"
     invitation_text: "You got invited to an appointment from"
@@ -98,4 +103,6 @@ en:
   button_lables:
     save: "Save"
     cancle: "Cancle"
+
+  edit_profile: "Edit Profile"
 

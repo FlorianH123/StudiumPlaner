@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_190003) do
+ActiveRecord::Schema.define(version: 2018_09_23_151905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,19 +24,19 @@ ActiveRecord::Schema.define(version: 2018_09_13_190003) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events_users", id: false, force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "user_id"
+    t.index ["event_id"], name: "index_events_users_on_event_id"
+    t.index ["user_id"], name: "index_events_users_on_user_id"
+  end
+
   create_table "grades", force: :cascade do |t|
     t.float "grade_value"
     t.string "lecture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-  end
-
-  create_table "participants_events", id: false, force: :cascade do |t|
-    t.bigint "events_id"
-    t.bigint "users_id"
-    t.index ["events_id"], name: "index_participants_events_on_events_id"
-    t.index ["users_id"], name: "index_participants_events_on_users_id"
   end
 
   create_table "time_tables", force: :cascade do |t|
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 2018_09_13_190003) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

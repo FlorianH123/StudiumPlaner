@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action
+
   def show
     @events = Event.all.where('date_to > ?', DateTime.current)
   end
@@ -17,13 +19,18 @@ class EventsController < ApplicationController
 
     end
 
-    EventMailer.notify_event_participants(@event, current_user).deliver
+    @event.users.each do |participant|
+      if participant.present?
+        EventMailer.notify_event_participants(@event, current_user, participant).deliver
+      end
+    end
+
     redirect_to events_path
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:date_from, :date_to, :place, :title)
+    params.require(:event).permit(:date_from, :date_to, :place, :title, user_ids: [])
   end
 end
