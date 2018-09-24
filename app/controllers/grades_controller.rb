@@ -1,5 +1,5 @@
 class GradesController < ApplicationController
-  #before_action :set_grade, only: [:destroy]
+  before_action :set_grade, only: [:destroy]
 
   def index
     @grade = Grade.new
@@ -11,6 +11,7 @@ class GradesController < ApplicationController
     @grade.user = current_user
 
     @grade.grade_value = @grade.grade_value.round(2)
+
     if @grade.save
       flash[:notice] = t('controllers.grades_controller.grade_saved')
     else
@@ -21,8 +22,8 @@ class GradesController < ApplicationController
   end
 
   def destroy
-    @grade = Grade.find(params[:id])
     @grade.destroy
+
     redirect_to grades_path
   end
 
@@ -39,7 +40,7 @@ class GradesController < ApplicationController
   def round_to
     float fl = (10 ** 2).to_f
     nr = self * f
-    return nr.round / f
+    nr.round / f
   end
 
   def get_average_grade_point

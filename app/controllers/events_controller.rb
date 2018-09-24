@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action
 
-  def show
+  def index
     @events = Event.all.where('date_to > ?', DateTime.current)
   end
 
@@ -16,13 +16,10 @@ class EventsController < ApplicationController
       flash[:notice] = t('events.event_saved')
     else
       flash[:alert] = @event.errors.full_messages.map(&:inspect).join(', ')
-
     end
 
     @event.users.each do |participant|
-      if participant.present?
-        EventMailer.notify_event_participants(@event, current_user, participant).deliver
-      end
+      EventMailer.notify_event_participants(@event, current_user, participant).deliver
     end
 
     redirect_to events_path

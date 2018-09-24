@@ -20,7 +20,7 @@ class TimeTablesController < ApplicationController
     if @time_table.save
       flash[:notice] = t('timetable.timetable_saved')
     else
-      flash[:alert] = @time_table.errors.full_messages
+      flash[:alert] = @time_table.errors.full_messages.map(&:inspect).join(', ')
     end
 
     redirect_to time_tables_path

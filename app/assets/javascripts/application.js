@@ -17,32 +17,3 @@
 //= require turbolinks
 //= require nested_form_fields
 //= require_tree .
-
-jQuery(document).ready(function() {
-    jQuery('#add-new-row').click(function () {
-        var count = jQuery("#time-table-table tbody").children().length + 1;
-
-        jQuery("tr:last").after(
-            "<tr>" +
-                "<td><textarea></textarea></td>" +
-                "<td><textarea></textarea></td>" +
-                "<td><textarea></textarea></td>" +
-                "<td><textarea></textarea></td>" +
-                "<td><textarea></textarea></td>" +
-                "<td><textarea></textarea></td>" +
-                "<td><textarea></textarea></td>" +
-            "</tr>"
-        );
-
-        jQuery("tr:last :first-child :first-child").val(count + ". Period");
-    });
-
-    jQuery('#remove-last-row').click(function () {
-        var table_rows = jQuery("#time-table-table tbody").children().length;
-
-        if (table_rows > 1) {
-            jQuery("tr:last").remove();
-        }
-
-    });
-});
