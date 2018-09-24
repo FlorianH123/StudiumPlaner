@@ -1,0 +1,80 @@
+<% if @time_table.present? %>
+  <div class="container-fluid">
+    <h2 class="time-table-heading">
+      <%= @time_table.caption %>
+    </h2>
+
+    <br/>
+    <br/>
+
+    <table class="time-table table">
+      <tr>
+        <th class="time-table-row">
+          <%= t('timetable.period') %>
+        </th>
+        <th class="time-table-row">
+          <%= t('weekday.monday') %>
+        </th>
+        <th class="time-table-row">
+          <%= t('weekday.tuesday') %>
+        </th>
+        <th class="time-table-row">
+          <%= t('weekday.wednesday') %>
+        </th>
+        <th class="time-table-row">
+          <%= t('weekday.thursday') %>
+        </th>
+        <th class="time-table-row">
+          <%= t('weekday.friday') %>
+        </th>
+        <th class="time-table-row">
+          <%= t('weekday.saturday') %>
+        </th>
+      </tr>
+
+    <% @time_table.table_rows.each do |table_row| %>
+      <tr>
+        <td class="time-table-row">
+          <%= return_to_break(table_row.period) %>
+        </td>
+        <td class="time-table-row">
+          <%= return_to_break(table_row.monday_field) %>
+        </td>
+        <td class="time-table-row">
+          <%= return_to_break(table_row.tuesday_field) %>
+        </td>
+        <td class="time-table-row">
+          <%= return_to_break(table_row.wednesday_field) %>
+        </td>
+        <td class="time-table-row">
+          <%= return_to_break(table_row.thursday_field) %>
+        </td>
+        <td class="time-table-row">
+          <%= return_to_break(table_row.friday_field) %>
+        </td>
+        <td class="time-table-row">
+          <%= return_to_break(table_row.saturday_field) %>
+        </td>
+      </tr>
+    <% end %>
+
+    </table>
+      <div class="time-table-buttons">
+        <%= button_to t('button_lables.delete'), time_table_path(@time_table.id),
+                      method: :delete, data: {confirm: t('timetable.remove_time_table_confirmation')}, :class => "btn btn-danger" %>
+      </div>
+
+      <div class="time-table-buttons">
+        <%= button_to t('button_lables.update'), edit_time_table_path(@time_table.id),
+                      method: :get, :class => "btn btn-primary" %>
+      </div>
+  </div>
+
+<% else %>
+  <div class="no-timetable">
+    <h2><%= t('timetable.no_timetable') %></h2>
+    <%= button_to t('timetable.new_timetable'), new_time_table_path, method: :get, :class => "btn btn-success" %>
+  </div>
+<% end %>
+
+

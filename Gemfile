@@ -39,7 +39,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'letter_opener_web', '~> 1.0'
 end
 
 group :development do
@@ -69,6 +68,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
 
+#Letter Opener
+gem 'letter_opener_web', '~> 1.0'
+
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
@@ -82,10 +84,15 @@ gem 'simple_form'
 
 gem 'rspec'
 
+#Datenbank
 gem 'pg'
-gem 'mysql2'
 
+# File Upload to S3
 gem 'aws-sdk-s3'
 gem "paperclip", "~> 6.0.0"
 
+# Datum Validierung
 gem 'validates_timeliness'
+
+# Better Nested Forms
+gem 'nested_form_fields'

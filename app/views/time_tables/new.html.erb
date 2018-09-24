@@ -1,38 +1,3 @@
-
-
-
-<table class="table" id="time-table-table">
-  <thead>
-    <tr>
-      <th></th>
-      <th><%= t('weekday.monday') %></th>
-      <th><%= t('weekday.tuesday') %></th>
-      <th><%= t('weekday.wednesday') %></th>
-      <th><%= t('weekday.thursday') %></th>
-      <th><%= t('weekday.friday') %></th>
-      <th><%= t('weekday.saturday') %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= f.fields_for %>
-    <tr>
-      <td><textarea>1 <%= t('timetable.period') %></textarea></td>
-      <td><textarea></textarea></td>
-      <td><textarea></textarea></td>
-      <td><textarea></textarea></td>
-      <td><textarea></textarea></td>
-      <td><textarea></textarea></td>
-      <td><textarea></textarea></td>
-    </tr>
-  </tbody>
-
-</table>
-
-<button id='add-new-row'><%= t('timetable.add_new_row') %></button>
-<button id='remove-last-row'><%= t('timetable.remove_last_row') %></button>
-
-<%= button_to t('button_lables.cancle'), time_tables_path, method: :get %>
-<%= button_to t('button_lables.save'), time_tables_path, method: :post%>
+<%= render 'time_table_form' %>
 
 

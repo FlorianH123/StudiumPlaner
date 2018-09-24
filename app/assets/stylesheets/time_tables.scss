@@ -1,3 +1,25 @@
 // Place all the styles related to the time_tables controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.no-timetable {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.time-table th {
+  text-align: center;
+}
+
+.time-table .time-table-row {
+  border: 2px solid black;
+}
+
+.time-table-heading {
+  text-align: center;
+}
+
+.time-table-buttons {
+  float: left;
+  padding-right: 10px;
+}

@@ -36,7 +36,7 @@ de:
     average_gradepoint:
       grade_point_average: "Notenschnitt:"
 
-    show_all_grades:
+    all_grades:
       thead_grade: "Note"
       thead_lecture: "Vorlesung"
       grades: "Alle Noten"
@@ -47,7 +47,7 @@ de:
     date_from: "Von"
     date_to: "Bis"
     place: "Ort"
-    title: "Topic"
+    title: "Anlass"
     participants: "Teilnehmer"
     new_event: "Neuer Termin"
     where: "Wo"
@@ -58,7 +58,13 @@ de:
   timetable:
     add_new_row: "Neue Zeile"
     remove_last_row: "Entferne letzte Zeile"
-    period: ". Stunde"
+    period: "Stunde"
+    new_timetable: "Neuer Stundenplan"
+    no_timetable: "Es wurde noch kein Stundenplan angelegt"
+    timetable_saved: "Studenplan gespeichert!"
+    timetable_deleted: "Stundenplan gelöscht!"
+    timetable_not_deleted: "Stundenplan konnte nicht gelöscht werden!"
+    remove_time_table_confirmation: "Sind Sie sicher das Sie diesen Stundenplan löschen wollen?"
 
   weekday:
     monday: "Montag"
@@ -71,5 +77,7 @@ de:
   button_lables:
     save: "Speichern"
     cancle: "Abbrechen"
+    delete: "Löschen"
+    update: "Update"
 
   edit_profile: "Profil bearbeiten"

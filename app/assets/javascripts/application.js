@@ -15,6 +15,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require nested_form_fields
 //= require_tree .
 
 jQuery(document).ready(function() {

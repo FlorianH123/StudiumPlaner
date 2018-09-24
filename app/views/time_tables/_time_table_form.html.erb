@@ -1,0 +1,40 @@
+<%= simple_form_for @time_table do |f| %>
+  <div class="container-fluid">
+    <div class="col-sm-2">
+      <%= f.input :caption, as: :string, label: "Name", input_html: {autocomplete: 'off'} %>
+    </div>
+
+
+    <table class="table" id="time-table-table">
+      <thead>
+      <tr>
+        <th><%= t('timetable.period') %></th>
+        <th><%= t('weekday.monday') %></th>
+        <th><%= t('weekday.tuesday') %></th>
+        <th><%= t('weekday.wednesday') %></th>
+        <th><%= t('weekday.thursday') %></th>
+        <th><%= t('weekday.friday') %></th>
+        <th><%= t('weekday.saturday') %></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <%= f.nested_fields_for :table_rows, wrapper_tag: :tr do |table_row|%>
+        <%= table_row.hidden_field :id %>
+        <td><%= table_row.text_area(:period, cols: "20", rows: "4") %></td>
+        <td><%= table_row.text_area(:monday_field, cols: "20", rows: "4") %></td>
+        <td><%= table_row.text_area(:tuesday_field, cols: "20", rows: "4") %></td>
+        <td><%= table_row.text_area(:wednesday_field, cols: "20", rows: "4") %></td>
+        <td><%= table_row.text_area(:thursday_field, cols: "20", rows: "4") %></td>
+        <td><%= table_row.text_area(:friday_field, cols: "20", rows: "4") %></td>
+        <td><%= table_row.text_area(:saturday_field, cols: "20", rows: "4") %></td>
+      <% end %>
+      </tbody>
+    </table>
+
+    <div class="col-sm-2">
+      <%= f.add_nested_fields_link :table_rows, t('timetable.add_new_row'), class: 'btn btn-success', role: 'button'  %>
+      <%= f.submit t('button_lables.save'), class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

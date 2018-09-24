@@ -1,7 +1,7 @@
 class GradesController < ApplicationController
   #before_action :set_grade, only: [:destroy]
 
-  def show
+  def index
     @grade = Grade.new
     @grades = Grade.where('user_id = ?', current_user.id)
   end
@@ -10,8 +10,9 @@ class GradesController < ApplicationController
     @grade = Grade.new(grade_params)
     @grade.user = current_user
 
+    @grade.grade_value = @grade.grade_value.round(2)
     if @grade.save
-      flash[:notice] = t('controllers.grades_controller.grade_not_saved')
+      flash[:notice] = t('controllers.grades_controller.grade_saved')
     else
       flash[:alert] = @grade.errors.full_messages.map(&:inspect).join(',')
     end
@@ -20,7 +21,7 @@ class GradesController < ApplicationController
   end
 
   def destroy
-    @grade = grade
+    @grade = Grade.find(params[:id])
     @grade.destroy
     redirect_to grades_path
   end
@@ -35,9 +36,15 @@ class GradesController < ApplicationController
     @grade = Grade.find(params[:id])
   end
 
+  def round_to
+    float fl = (10 ** 2).to_f
+    nr = self * f
+    return nr.round / f
+  end
+
   def get_average_grade_point
     if current_user.grades.pluck("avg(grade_value)").join(',') != ""
-      current_user.grades.pluck("avg(grade_value)").join(',')
+      "%0.2f" % [current_user.grades.pluck("avg(grade_value)").join(',')]
     else
       t('controllers.grades_controller.grade_not_found')
     end

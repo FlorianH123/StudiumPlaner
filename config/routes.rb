@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resource 'events'
-  resource 'grades'
-  resource 'time_tables'
-  resource 'settings'
+  resources 'grades'
+  resources 'time_tables'
   resource 'locales'
+
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

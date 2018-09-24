@@ -1,7 +1,7 @@
 <div class="all-grades">
-  <h1>
+  <h3>
     <%= t('.grades') %>
-  </h1>
+  </h3>
 
   <div class="container">
     <table class="table table-hover gradeTable">
@@ -14,11 +14,11 @@
 
       <tbody>
       <% if !@grades.blank? %>
-        <% @grades.each do |book| %>
+        <% for item in @grades %>
           <tr>
-            <td> <%= book.grade_value %> </td>
-            <td> <%= book.lecture %> </td>
-            <td> <%= link_to t('.remove_grade'), book, method: :delete,
+            <td> <%= item.grade_value %> </td>
+            <td> <%= item.lecture %> </td>
+            <td> <%= link_to t('.remove_grade'), grade_path(item), method: :delete,
                              data: {confirm: t('.remove_grade_confirmation')} %> </td>
           </tr>
         <% end %>

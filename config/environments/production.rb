@@ -41,19 +41,6 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 
-  config.paperclip_defaults = {
-      :storage => :s3,
-      :s3_credentials => {
-          :access_key_id     => Rails.application.credentials.aws[:access_key_id],
-          :secret_access_key => Rails.application.credentials.aws[:secret_key_base]
-      },
-      :s3_region => 'eu-west-1',
-      :bucket => 'a9s-railsvorlesung',
-      :path  => "home/railsvorlesung16/:basename.:extension",
-      :s3_protocol => 'https',
-      :s3_host_name => "s3-eu-west-1.amazonaws.com"
-  }
-
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
@@ -95,6 +82,9 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :letter_opener_web
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)

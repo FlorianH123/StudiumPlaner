@@ -25,7 +25,7 @@
     <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-brand pull-right link-item" %>
     <a class="navbar-brand pull-right" href=<%= edit_user_registration_path %>>
       <% if current_user.image_file_name? %>
-        <%= image_tag(asset_path(current_user.image_file_name)) %>
+        <%= image_tag current_user.image.url %>
       <% else %>
         <%= image_tag(asset_path('default-avatar')) %>
       <% end %>

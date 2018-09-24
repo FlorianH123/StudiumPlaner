@@ -30,13 +30,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-
   controllers:
-      grades_controller:
-        grade_saved: "Grade saved"
-        grade_not_saved: "There was an error while saving the grade!"
-        grade_not_found: "No grades entered yet!"
+    grades_controller:
+    grade_saved: "Grade saved"
+    grade_not_saved: "There was an error while saving the grade!"
+    grade_not_found: "No grades entered yet!"
 
   layouts:
     application:
@@ -68,7 +66,7 @@ en:
     average_gradepoint:
       grade_point_average: "Grade Point Average:"
 
-    show_all_grades:
+    all_grades:
       thead_grade: "Grade"
       thead_lecture: "Lecture"
       grades: "All Grades"
@@ -90,7 +88,13 @@ en:
   timetable:
     add_new_row: "New row"
     remove_last_row: "Remove last row"
-    period: ". Period"
+    period: "Period"
+    new_timetable: "New time table"
+    no_timetable: "No time table created yet"
+    timetable_saved: "Time table saved!"
+    timetable_deleted: "Time table deleted!"
+    timetable_not_deleted: "Time table could not be deleted!"
+    remove_time_table_confirmation: "Are you sure you want to delete this time table?"
 
   weekday:
     monday: "Monday"
@@ -103,6 +107,8 @@ en:
   button_lables:
     save: "Save"
     cancle: "Cancle"
+    delete: "Delete"
+    update: "Update"
 
   edit_profile: "Edit Profile"
 
