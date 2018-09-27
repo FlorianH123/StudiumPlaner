@@ -2,7 +2,9 @@ class EventsController < ApplicationController
   before_action
 
   def index
-    @events = Event.all.where('date_to > ?', DateTime.current)
+    @events = Event.where('date_to > ?', DateTime.current)
+                  .joins(:users)
+                  .merge(User.where("user_id = ?", current_user.id))
   end
 
   def new

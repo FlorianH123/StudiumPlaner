@@ -2,4 +2,4 @@ applications:
 - name: Studiumplaner
   buildpack: ruby_buildpack
   services:
-    - postgres-server
+    - StudiumplanerDb

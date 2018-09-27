@@ -2,7 +2,7 @@ class TimeTablesController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy]
 
   def index
-    @time_table = TimeTable.find_by user_id: current_user.id
+    @time_table = TimeTable.find_by('user_id = ?', current_user.id)
   end
 
   def edit
@@ -48,7 +48,7 @@ class TimeTablesController < ApplicationController
   end
 
   def time_table_params
-    params.require(:time_table).permit(:name, table_rows_attributes:
+    params.require(:time_table).permit(:caption, table_rows_attributes:
         [:id, :order, :period, :monday_field, :tuesday_field,
          :wednesday_field, :thursday_field, :friday_field, :saturday_field])
   end

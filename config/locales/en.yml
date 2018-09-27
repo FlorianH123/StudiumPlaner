@@ -32,9 +32,9 @@
 en:
   controllers:
     grades_controller:
-    grade_saved: "Grade saved"
-    grade_not_saved: "There was an error while saving the grade!"
-    grade_not_found: "No grades entered yet!"
+      grade_saved: "Grade saved"
+      grade_not_saved: "There was an error while saving the grade!"
+      grade_not_found: "No grades entered yet!"
 
   layouts:
     application:
